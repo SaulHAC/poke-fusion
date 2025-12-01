@@ -1,1 +1,7 @@
-<p>pokemon-card works!</p>
+<div class="item-card">
+  <p class="poke-name">{{ pokemon?.name }}</p>
+  <img class="poke-img" [src]="pokemon?.sprite" alt="pokeapi" />
+  <button class="btn btn-delete" (click)="removeFromFavorites(pokemon!)">
+    Eliminar
+  </button>
+</div>

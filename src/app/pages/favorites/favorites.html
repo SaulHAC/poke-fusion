@@ -1,1 +1,12 @@
 <app-topbar></app-topbar>
+
+<div class="container">
+  @for (pokemon of favorites; track $index) {
+
+  <app-pokemon-card
+    [pokemon]="pokemon"
+    (removed)="onPokemonRemoved()"
+  ></app-pokemon-card>
+
+  }
+</div>

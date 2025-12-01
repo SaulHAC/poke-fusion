@@ -1,0 +1,41 @@
+.item-card {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+
+  padding: 10px 35px;
+}
+
+.poke-img {
+  width: 100px;
+}
+
+.poke-name {
+  text-transform: capitalize;
+}
+
+.btn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 8px 30px;
+
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: rgb(185, 9, 9);
+}
+
+.btn-delete:hover {
+  background-color: rgb(199, 39, 39);
+}

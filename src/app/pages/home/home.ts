@@ -84,6 +84,7 @@ export class Home implements OnInit {
   refuse() {
     this.isLoading = true;
     this.fusedPokemon = undefined;
+    this.favorite = false;
     this.loadAllPokemonsAndFuse();
   }
 }
