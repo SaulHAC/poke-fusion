@@ -128,6 +128,8 @@ Resolución de errores puntuales (aveces son errores que se les escapa a uno y t
 
 Ejmplos de algunas sintaxis (Habian sintaxis complejas que no recordaba y recurria a la ia para ello)
 
+Hostear en firebase
+
 2. ¿Qué sugerencias acepté vs. reescribí?
 
 Acepté buenas prácticas.
