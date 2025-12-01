@@ -51,5 +51,38 @@
       <button class="btn-favorites">Añadir a favoritos</button>
     </div>
   </div>
-  <div class="random-pokemons-section"></div>
+  <div class="random-pokemons-section">
+    <div class="random-pokemons-card">
+      <p class="title-random-pokemons">Pokemones random seleccionados</p>
+
+      <div class="list-random">
+        @for (item of pokemons; track $index) {
+        <div class="item">
+          <span class="random-layer-one">
+            <span class="random-pokemon-name"
+              >{{ $index + 1 }}.- {{ item.name }}</span
+            >
+            <ul class="pokemon-types">
+              @for (type of item.types; track $index) {
+              <li>
+                {{ isLoading ? "Cargando..." : type }}
+              </li>
+              }
+            </ul>
+          </span>
+
+          <span class="random-layer-two">
+            <span> HP: {{ item.stats["hp"] }}, </span>
+            <span> attack: {{ item.stats["attack"] }}, </span>
+            <span> defense: {{ item.stats["defense"] }}, </span>
+            <span> special-attack: {{ item.stats["special-attack"] }}, </span>
+            <span> special-defense: {{ item.stats["special-defense"] }} </span>
+          </span>
+        </div>
+        }
+      </div>
+
+      <button class="btn-favorites" (click)="refuse()">Re-fusionar</button>
+    </div>
+  </div>
 </div>

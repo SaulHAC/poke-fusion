@@ -32,8 +32,8 @@
 }
 
 .pokemon-image {
-  width: 250px;
-  top: -120px;
+  width: 200px;
+  top: -100px;
   right: 0px;
   position: absolute;
 }
@@ -83,6 +83,59 @@
 
 .btn-favorites:hover {
   background-color: rgb(21, 163, 179);
+}
+
+/*Segunda seccion*/
+.random-pokemons-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+.random-pokemons-card {
+  background-color: white;
+  width: 100%;
+
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+
+.title-random-pokemons {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.random-pokemon-name {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.random-layer-one {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  padding: 15px 30px;
+  border-radius: 20px;
+
+  background-color: rgb(245, 245, 245);
+}
+
+.list-random {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 @media (max-width: 1200px) {
