@@ -36,7 +36,6 @@ export class LocalStorageService {
         environment.LOCAL_STORAGE_FAVORITES_KEY,
         JSON.stringify(currentFavorites)
       );
-      console.log('pokemons añadido');
     } else {
       console.warn('el pokemon ya esta en favoritos');
     }
@@ -57,8 +56,6 @@ export class LocalStorageService {
       environment.LOCAL_STORAGE_FAVORITES_KEY,
       JSON.stringify(updatedFavorites)
     );
-
-    console.log(`pokemon eliminado de favoritos`);
   }
 
   checkFavorite(fusedPokemon: FusedPokemon | null): boolean {

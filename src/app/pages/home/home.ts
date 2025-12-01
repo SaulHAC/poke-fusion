@@ -59,9 +59,6 @@ export class Home implements OnInit {
 
         this.pokeFusionService.setLastFusion(this.fusedPokemon);
         this.pokeService.setRandomPokemons(this.pokemons);
-
-        console.log('pokemon fusionado: ', this.fusedPokemon);
-        console.log('pokemons random: ', this.pokemons);
       },
       error: (error) => {
         console.error('Error al cargar algún pokemon: ', error);
