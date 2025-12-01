@@ -4,6 +4,7 @@ import { forkJoin, Observable } from 'rxjs';
 import { FusedPokemon, Pokemon } from '../../models/pokemon.model';
 import { PokeFusionService } from '../../services/poke-fusion-service';
 import { Topbar } from '../../component/topbar/topbar';
+import { LocalStorageService } from '../../services/local-storage-service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import { Topbar } from '../../component/topbar/topbar';
 export class Home implements OnInit {
   constructor(
     private pokeService: PokeSerice,
-    private pokeFusionService: PokeFusionService
+    private pokeFusionService: PokeFusionService,
+    private localStorageService: LocalStorageService
   ) {}
 
   public pokemons: Pokemon[] = [];
@@ -23,8 +25,22 @@ export class Home implements OnInit {
   public isLoading: boolean = true;
   public error: boolean = false;
 
+  public favorite: boolean = false;
+  public randomPokemons: Pokemon[] = [];
+
   ngOnInit(): void {
-    this.loadAllPokemonsAndFuse();
+    const lastFusion = this.pokeFusionService.getLastFusion();
+    const randomPokemons = this.pokeService.getRandomPokemons();
+
+    this.favorite = this.localStorageService.checkFavorite(lastFusion);
+
+    if (lastFusion) {
+      this.isLoading = false;
+      this.fusedPokemon = lastFusion;
+      this.pokemons = randomPokemons;
+    } else {
+      this.loadAllPokemonsAndFuse();
+    }
   }
 
   loadAllPokemonsAndFuse() {
@@ -41,6 +57,9 @@ export class Home implements OnInit {
         this.fusedPokemon = this.pokeFusionService.fuse(this.pokemons);
         this.isLoading = false;
 
+        this.pokeFusionService.setLastFusion(this.fusedPokemon);
+        this.pokeService.setRandomPokemons(this.pokemons);
+
         console.log('pokemon fusionado: ', this.fusedPokemon);
         console.log('pokemons random: ', this.pokemons);
       },
@@ -50,6 +69,16 @@ export class Home implements OnInit {
         this.isLoading = false;
       },
     });
+  }
+
+  addToFavorites() {
+    this.localStorageService.addToFavorites(this.fusedPokemon);
+    this.favorite = true;
+  }
+
+  removeFromFavorites() {
+    this.localStorageService.removeFromFavorites(this.fusedPokemon);
+    this.favorite = false;
   }
 
   refuse() {

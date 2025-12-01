@@ -68,11 +68,11 @@
   gap: 10px;
 }
 
-.btn-favorites {
+.btn {
   margin-top: 30px;
   width: 100%;
   padding: 10px 30px;
-  background-color: #0097a7ff;
+
   border-radius: 10px;
   border: none;
   color: white;
@@ -81,7 +81,27 @@
   cursor: pointer;
 }
 
+.btn-favorites {
+  background-color: #0097a7ff;
+}
+
 .btn-favorites:hover {
+  background-color: rgb(21, 163, 179);
+}
+
+.btn-delete {
+  background-color: rgb(185, 9, 9);
+}
+
+.btn-delete:hover {
+  background-color: rgb(199, 39, 39);
+}
+
+.btn-re-fusion {
+  background-color: #0097a7ff;
+}
+
+.btn-re-fusion:hover {
   background-color: rgb(21, 163, 179);
 }
 

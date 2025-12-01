@@ -5,6 +5,15 @@ import { FusedPokemon, Pokemon } from '../models/pokemon.model';
   providedIn: 'root',
 })
 export class PokeFusionService {
+  private lastFusion: FusedPokemon | null = null;
+
+  setLastFusion(pokemon: FusedPokemon): void {
+    this.lastFusion = pokemon;
+  }
+
+  getLastFusion(): FusedPokemon | null {
+    return this.lastFusion;
+  }
   fuse(pokemons: Pokemon[]): FusedPokemon {
     const id = Date.now().toString();
 

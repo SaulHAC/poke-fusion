@@ -8,6 +8,16 @@ import { environment } from '../../environments/environment.development';
   providedIn: 'root',
 })
 export class PokeSerice {
+  private randomPokemons: Pokemon[] = [];
+
+  setRandomPokemons(pokemons: Pokemon[]): void {
+    this.randomPokemons = pokemons;
+  }
+
+  getRandomPokemons(): Pokemon[] {
+    return this.randomPokemons;
+  }
+
   constructor(private http: HttpClient) {}
 
   getPokemonById(id: number): Observable<Pokemon> {
