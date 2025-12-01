@@ -1,0 +1,32 @@
+.top-bar-container {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 5px 60px;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgb(231, 231, 231);
+
+  z-index: 10;
+}
+
+.logo img {
+  height: 45px;
+}
+
+.navigation-options {
+  display: flex;
+  gap: 50px;
+}
+
+.navigation-options a.link-navigation {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+
+.navigation-options a.link-navigation.active-link {
+  color: rgb(202, 10, 10);
+}

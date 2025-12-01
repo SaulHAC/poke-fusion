@@ -1,1 +1,22 @@
-<p>topbar works!</p>
+<div class="top-bar-container">
+  <div class="logo">
+    <img src="assets/img/logo_pokemon.webp" alt="pokemon" />
+  </div>
+
+  <div class="navigation-options">
+    <a
+      routerLink="/home"
+      routerLinkActive="active-link"
+      class="link-navigation"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Inicio</a
+    >
+    <a
+      routerLink="/favorites"
+      routerLinkActive="active-link"
+      class="link-navigation"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Favoritos</a
+    >
+  </div>
+</div>
